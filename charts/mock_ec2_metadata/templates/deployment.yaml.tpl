@@ -38,7 +38,7 @@ spec:
               fieldRef:
                 fieldPath: status.podIP
           - name: MOCK_METADATA_PORT
-            value: {{ .Values.mockMetadata.port | default 9081 | quote }}
+            value: {{ include "mock_ec2_metadata.port" . }}
           securityContext:
             privileged: true
       containers:
@@ -89,7 +89,7 @@ spec:
               fieldRef:
                 fieldPath: status.podIP
           - name: MOCK_METADATA_PORT
-            value: {{ .Values.mockMetadata.port | default 9081 | quote }}
+            value: {{ include "mock_ec2_metadata.port" . }}
           - name: MOCK_METADATA_ROLE_ARN
             valueFrom:
               fieldRef:

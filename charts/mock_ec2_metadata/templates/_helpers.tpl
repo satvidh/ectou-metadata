@@ -23,6 +23,10 @@ If release name contains chart name it will be used as a full name.
 {{- end }}
 {{- end }}
 
+{{- define "mock_ec2_metadata.port" -}}
+{{- default 9081 .Values.mockMetadata.port | quote }}
+{{- end }}
+
 {{/*
 Create chart name and version as used by the chart label.
 */}}
