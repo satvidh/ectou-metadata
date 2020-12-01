@@ -38,7 +38,7 @@ spec:
               fieldRef:
                 fieldPath: status.podIP
           - name: MOCK_METADATA_PORT
-            value: {{ .Values.mockMetadata.port | default 9080 | quote }}
+            value: {{ .Values.mockMetadata.port | default 9081 | quote }}
           securityContext:
             privileged: true
       containers:
